@@ -89,11 +89,8 @@ fn build_with_cmake(src_path: &str) {
         } else {
             panic!("filed to create windows library");
         }
-    } // on web copy libraylib.bc to libraylib.a
-    if platform == Platform::Web {
-        std::fs::copy(dst_lib.join("libraylib.bc"), dst_lib.join("libraylib.a"))
-            .expect("filed to create wasm library");
-    }
+    } 
+    
     // println!("cmake build {}", c.display());
     println!("cargo:rustc-link-search=native={}", dst_lib.display());
 }
