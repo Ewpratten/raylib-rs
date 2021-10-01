@@ -76,9 +76,5 @@ pub use crate::core::*;
 
 #[macro_use]
 extern crate num_derive;
-
-// Re-exports
-#[cfg(feature = "with_serde")]
-pub use serde;
-#[cfg(feature = "nalgebra_interop")]
-pub use nalgebra as na;
+#[cfg(feature="serde")]
+extern crate serde;
