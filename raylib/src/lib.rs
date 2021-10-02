@@ -77,4 +77,5 @@ pub use crate::core::*;
 #[macro_use]
 extern crate num_derive;
 #[cfg(feature="serde")]
+#[macro_use]
 extern crate serde;
