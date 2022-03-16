@@ -99,7 +99,7 @@ fn main() {
             rstr!("raylib [core] example - basic window"),
             example::core::core_basic_window::run,
         ),
-        #[cfg(not(target_os = "macos"))]
+        #[cfg(target_os = "windows")]
         (
             rstr!("raylib [core] example - custom logging"),
             example::core::core_custom_logging::run,
@@ -157,10 +157,10 @@ fn main() {
             rstr!("raylib [models] example - cubesmap loading and drawing"),
             example::models::models_cubicmap::run,
         ),
-        (
-            rstr!("raylib [models] example - pbr material"),
-            example::models::models_material_pbr::run,
-        ),
+        // (
+        //     rstr!("raylib [models] example - pbr material"),
+        //     example::models::models_material_pbr::run,
+        // ),
         (
             rstr!("raylib [models] example - drawing billboards"),
             example::models::models_billboard::run,
@@ -205,17 +205,17 @@ fn main() {
             rstr!("raylib [models] example - orthographic projection"),
             example::models::models_orthographic_projection::run,
         ),
-        #[cfg(not(target_os = "macos"))]
+        #[cfg(target_os = "windows")]
         (
             rstr!(
                 "raylib [models] example - rlgl module usage with push/pop matrix transformations"
             ),
             example::models::models_rlgl_solar_system::run,
         ),
-        (
-            rstr!("raylib [models] example - skybox loading and drawing"),
-            example::models::models_skybox::run,
-        ),
+        // (
+        //     rstr!("raylib [models] example - skybox loading and drawing"),
+        //     example::models::models_skybox::run,
+        // ),
         (
             rstr!("raylib [models] example - waving cubes"),
             example::models::models_waving_cubes::run,
@@ -260,7 +260,7 @@ fn main() {
             rstr!("raylib [textures] example - mouse painting"),
             example::textures::textures_mouse_painting::run,
         ),
-        #[cfg(not(target_os = "macos"))]
+        #[cfg(target_os = "windows")]
         (
             rstr!("rlgl standalone"),
             example::others::rlgl_standalone::run,

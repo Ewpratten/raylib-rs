@@ -32,7 +32,7 @@ Though this binding tries to stay close to the simple C API, it makes some chang
 | core   | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :construction: |         |              |
 | rgui   | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |                |         |              |
 | physac | :construction:     | :construction:     | :construction:     |                |         |              |
-| rlgl   | :x:                | :heavy_check_mark: | :heavy_check_mark: |                |         |              |
+| rlgl   | :heavy_check_mark: | :x:                | :x:                |                |         |              |
 
 ## Build Dependencies
 
@@ -43,7 +43,7 @@ Follow instructions for building raylib for your platform [here](https://github.
 
 ```toml
 [dependencies]
-raylib = "3.5"
+raylib = { version = "3.7" }
 ```
 
 2. Start coding!
@@ -73,6 +73,11 @@ fn main() {
 - In C, `LoadFontData` returns a pointer to a heap-allocated array of `CharInfo` structs. In this Rust binding, said array is copied into an owned `Vec<CharInfo>`, the original data is freed, and the owned Vec is returned.
 - In C, `GetDroppedFiles` returns a pointer to an array of strings owned by raylib. Again, for safety and also ease of use, this binding copies said array into a `Vec<String>` which is returned to the caller.
 - I've tried to make linking automatic, though I've only tested on Windows 10, Ubuntu, and MacOS 15. Other platforms may have other considerations.
+
+## Building from source
+
+1. Clone repository: `git clone --recurse-submodules`
+2. `cargo build`
 
 ## Cross-compiling using `cross`
 
